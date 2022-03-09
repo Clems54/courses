@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+
+package "BACKEND" {
+  [Application] -- API
+}
+
+node "FRONTEND" {
+  [Webapp]
+}
+
+database "DATABASE" {
+[H2]
+}
+
+API <-- [Webapp]
+[Application] --> [H2]
+
+@enduml

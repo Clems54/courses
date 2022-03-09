@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+User -> Interface : Se connecter
+Interface -> API : Se connecter
+API -> Controlleur : Se connecter
+Controlleur -> BDD : Récupération mots de passe et identifiant
+BDD --> Controlleur
+Controlleur --> API
+Controlleur -> Controlleur : Validation de la connexion
+API --> Interface : Page d'accueil admin
+
+User -> Interface : Afficher la page des étudiants
+Interface -> API : Get sur la page des étudiants
+API -> Controlleur : Get la liste des étudiants
+
+alt isAdmin
+    Controlleur -> BDD : Récupération de la liste des étudiants
+    BDD --> Controlleur : Liste des étudiants
+    Controlleur -> Controlleur : Formattage de la liste
+    Controlleur --> API : Retour de la liste
+    API --> Interface : Retour de la liste d'étudiants pour l'affichage
+else
+    Controlleur --> API : Droits non suffisant
+    API --> Interface : Droits non suffisant
+end
+
+@enduml

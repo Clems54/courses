@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Personne {
+    - nom : String
+    - prenom : String
+    - identifiant : String
+    - password : String
+}
+
+class Etudiant
+class Professeur
+class Administration
+
+class Classe {
+    - libelle : String
+    - identifiant : String
+}
+
+class Cours {
+    - libelle : String
+}
+class Salle {
+    - nom : String
+}
+
+Etudiant --|> Personne
+Professeur --|> Personne
+Administration --|> Personne
+Etudiant "1..*" -- "1" Classe
+Classe "1..*" -- "1..*" Cours
+Cours "*" -- "*" Salle
+Professeur "1" -- "1..*" Cours
+@enduml
