@@ -30,10 +30,10 @@ public class InitAll {
         final Classroom class1 = new Classroom().setRoom(227).setWeekNumber(12).setName("UML").setProfessor(professor1).setStudents(new ArrayList<>() {{
             add(student1);
         }});
-        final Classroom class2 = new Classroom().setRoom(227).setWeekNumber(13).setName("UML").setProfessor(professor1).setStudents(new ArrayList<>() {{
+        final Classroom class2 = new Classroom().setRoom(227).setWeekNumber(13).setName("UML2").setProfessor(professor1).setStudents(new ArrayList<>() {{
             add(student1);
         }});
-        final Classroom class3 = new Classroom().setRoom(227).setWeekNumber(14).setName("UML").setProfessor(professor1).setStudents(new ArrayList<>() {{
+        final Classroom class3 = new Classroom().setRoom(227).setWeekNumber(14).setName("UML3").setProfessor(professor1).setStudents(new ArrayList<>() {{
             add(student1);
         }});
 

@@ -23,7 +23,7 @@ public class Classroom {
 
     private int weekNumber;
 
-    @OneToMany
+    @ManyToMany
     private List<Student> students;
 
     @OneToOne
